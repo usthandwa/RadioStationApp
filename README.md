@@ -1,51 +1,118 @@
-# Welcome to your Expo app 👋
+# AWR SIDMedia Radio
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+## Description
+The AWR SIDMedia Radio Station App is a mobile application built with React Native and Expo, designed to provide listeners with easy access to live streams, podcasts, and program schedules for AWR SIDMedia. This app offers a user-friendly interface for enjoying radio content on various platforms.
 
-## Get started
+## Features
+- Live radio streaming
+- Podcast library with on-demand playback
+- Program schedule display
+- Social media integration
+- Donation/Give functionality
+- Prayer request submission
+- About Us information
 
-1. Install dependencies
+## Technologies Used
+- React Native
+- Expo
+- TypeScript
+- React Navigation
+- Expo AV for audio streaming
+- React Native WebView
+- Context API for state management
+- Track Player Services for audio handling
 
-   ```bash
-   npm install
-   ```
+## Prerequisites
+Before you begin, ensure you have met the following requirements:
+- Node.js (v14.0.0 or later)
+- npm (v6.0.0 or later)
+- Expo CLI (`npm install -g expo-cli`)
+- iOS Simulator or Android Emulator (for local testing)
 
-2. Start the app
-
-   ```bash
-    npx expo start
-   ```
-
-In the output, you'll find options to open the app in a
-
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
-
+## Installation
+1. Clone the repository:
 ```bash
-npm run reset-project
+git clone https://github.com/yourusername/AWR_SIDMedia_Radio.git
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+2. Navigate to the project directory:
+```bash
+cd AWR_SIDMedia_Radio
+```
 
-## Learn more
+3. Install dependencies:
+```bash
+npm install
+```
 
-To learn more about developing your project with Expo, look at the following resources:
+## Project Structure
+```
+src/
+├── assets/
+│   ├── AWRPresenters/
+│   └── icons/
+├── components/
+│   ├── AppNavigation.tsx
+│   ├── DrawerContent.tsx
+│   ├── EditableField.tsx
+│   ├── ImageUploader.tsx
+│   └── Menu.tsx
+├── context/
+│   └── UserContext.tsx
+├── screens/
+│   ├── AboutUsScreen.tsx
+│   ├── GiveScreen.tsx
+│   ├── HomeScreen.tsx
+│   ├── LiveStreamScreen.tsx
+│   ├── PodcastsScreen.tsx
+│   ├── PrayerScreen.tsx
+│   ├── ShowManagement.tsx
+│   └── SocialScreen.tsx
+├── services/
+│   ├── cmsApi.ts
+│   └── trackPlayerServices.ts
+└── types/
+    └── auth.ts
+```
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+## Running the App
+To run the app locally:
+1. Start the Expo development server:
+```bash
+expo start
+```
+2. Use the Expo Go app on your mobile device to scan the QR code, or run on an emulator.
 
-## Join the community
+## Building for Production
+1. For Android:
+```bash
+eas build --platform android
+```
 
-Join our community of developers creating universal apps.
+2. For iOS:
+```bash
+eas build --platform ios
+```
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
-# RadioStationApp
+## Configuration
+The app uses the following main configuration files:
+- `app.json` - Main Expo configuration
+- `babel.config.js` - Babel configuration
+- `tsconfig.json` - TypeScript configuration
+
+## Content Management
+The app integrates with a headless CMS for content management. API integration is handled through the `services/cmsApi.ts` file.
+
+## Contributing
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+## License
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## Contact
+Project Maintainer: Zanele Zama - zanele@awrsidmedia.org
+Project Link: https://github.com/yourusername/AWR_SIDMedia_Radio
