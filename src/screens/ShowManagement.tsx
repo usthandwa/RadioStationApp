@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { View, ScrollView } from 'react-native';
 import { RouteProp } from '@react-navigation/native';
-import { EditableField } from '../components/EditableField';
-import { ImageUploader } from '../components/ImageUploader';
-import { fetchShows, updateShow, uploadPresenterImage } from '../services/cmsApi';
+import { EditableField } from '../components/ui/EditableField';
+import { ImageUploader } from '../components/ui/ImageUploader';
+import { fetchShows, updateShow, uploadPresenterImage } from '../services/api/cmsApi';
 import { Show } from '../types/auth';
 
 type RouteParams = {

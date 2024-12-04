@@ -83,7 +83,7 @@ export enum Role {
   
   // Hook for checking permissions
    import { useContext } from 'react';
-import { updateShow } from '../services/cmsApi';
+import { updateShow } from '../services/api/cmsApi';
 import { UserContext } from '../context/UserContext';
 import React from 'react';
   

@@ -4,9 +4,10 @@ import { Slot, Stack, useRouter } from 'expo-router';
 import { Audio, InterruptionModeIOS, InterruptionModeAndroid } from 'expo-av';
 import { Linking } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
-import AppNavigation from '../src/components/AppNavigation';
+import AppNavigation from '../src/components/navigation/AppNavigation';
 import { HeaderBackButton } from '@react-navigation/elements';
-import Menu from '@/src/components/Menu';
+import Menu from '@/components/ui/Menu';
+
 
 export default function Layout() {
   const router = useRouter();
