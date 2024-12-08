@@ -19,6 +19,7 @@
       "supportsTablet": true,
       "infoPlist": {
         "UIBackgroundModes": [
+          "audio",
           "audio"
         ]
       },
@@ -26,13 +27,14 @@
     },
     "android": {
       "permissions": [
+        "AUDIO_RECORDING",
         "AUDIO_RECORDING"
       ],
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "package": "com.szama.RadioStationApp"  
+      "package": "com.szama.RadioStationApp"
     },
     "web": {
       "favicon": "./assets/favicon.png"
@@ -45,6 +47,10 @@
         "projectId": "5c68cf2b-80c1-4aad-a2e1-1e802d976f22"
       }
     },
-    "owner": "szama"
+    "owner": "szama",
+    "runtimeVersion": "1.0.0",
+    "updates": {
+      "url": "https://u.expo.dev/5c68cf2b-80c1-4aad-a2e1-1e802d976f22"
+    }
   }
 }
