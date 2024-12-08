@@ -1,51 +1,148 @@
-# Welcome to your Expo app 👋
+# AWR SIDmedia Radio Station App
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+## Description
 
-## Get started
+The AWR SIDmedia Radio Station App is a mobile application built with React Native and Expo, designed to provide listeners with easy access to live streams, podcasts, and program schedules for AWR SIDmedia. This app offers a user-friendly interface for enjoying radio content on various platforms.
 
-1. Install dependencies
+## Features
 
-   ```bash
+- Live radio streaming
+- Podcast library with on-demand playback
+- Program schedule display
+- Social media integration
+- Donation/Give functionality
+- Prayer request submission
+- About Us information
+
+## Technologies Used
+
+- React Native
+- Expo
+- TypeScript
+- React Navigation (Stack Navigator)
+- Expo AV for audio streaming
+- React Native WebView for embedded content
+
+## Prerequisites
+
+Before you begin, ensure you have met the following requirements:
+
+- Node.js (v14.0.0 or later)
+- npm (v6.0.0 or later)
+- Expo CLI (`npm install -g expo-cli`)
+- iOS Simulator or Android Emulator (for local testing)
+
+## Installation
+
+To install the AWR SIDmedia Radio Station App, follow these steps:
+
+1. Clone the repository:
+   ```
+   git clone https://github.com/szama/RadioStationApp.git
+   ```
+
+2. Navigate to the project directory:
+   ```
+   cd RadioStationApp
+   ```
+
+3. Install dependencies:
+   ```
    npm install
    ```
 
-2. Start the app
+## Running the App
 
-   ```bash
-    npx expo start
+To run the app locally:
+
+1. Start the Expo development server:
+   ```
+   expo start
    ```
 
-In the output, you'll find options to open the app in a
+2. Use the Expo Go app on your mobile device to scan the QR code, or run on an emulator.
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+## Project Structure
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+- `App.tsx` - Main application component with navigation setup
+- `src/` - Contains the main application code
+  - `screens/` - Individual screen components
+    - `HomeScreen.tsx`
+    - `LiveStreamScreen.tsx`
+    - `GiveScreen.tsx`
+    - `PrayerScreen.tsx`
+    - `PodcastsScreen.tsx`
+    - `AboutUsScreen.tsx`
+    - `SocialScreen.tsx`
+   - `Components/` -reusable content
+    - `AppNavigation.tsx`
+    - `trackPlayerServices.ts`
+- `assets/` - Images, fonts, and other static assets
 
-## Get a fresh project
+## Configuration
 
-When you're ready, run:
+The project uses the following configuration in `app.json`:
 
-```bash
-npm run reset-project
-```
+- Name: "RadioStationApp"
+- Slug: "RadioStationApp"
+- Version: "1.0.0"
+- Scheme: "awrsidmedia"
+- Orientation: portrait
+- iOS bundle identifier: "com.szama.RadioStationAppIOS"
+- Android package: "com.szama.RadioStationApp"
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+For full configuration details, refer to the `app.json` file in the project root.
 
-## Learn more
+## Content Management System (CMS)
 
-To learn more about developing your project with Expo, look at the following resources:
+This app uses Strapi as a headless CMS to manage content. To set up the CMS:
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+1. Install Strapi globally: `npm install -g strapi`
+2. Create a new Strapi project: `strapi new awrsidmedia-cms --quickstart`
+3. Configure content types in the Strapi admin panel (shows, podcasts, live stream info, prayer requests)
+4. Update the `API_URL` in `src/services/cmsApi.ts` to point to your Strapi instance
 
-## Join the community
+For more information on using Strapi, refer to the [Strapi documentation](https://strapi.io/documentation).
 
-Join our community of developers creating universal apps.
+## Building for Production
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
-# RadioStationApp
+To create a production build:
+
+1. For Android:
+   ```
+   eas build --platform android
+   ```
+
+2. For iOS:
+   ```
+   eas build --platform ios
+   ```
+
+Follow the prompts to complete the build process.
+
+## Contributing
+
+Contributions to the AWR SIDmedia Radio Station App are welcome. Please follow these steps:
+
+1. Fork the repository
+2. Create a new branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
+
+## Contact
+
+AWR SIDmedia - contact@awrsidmedia.org
+
+Project Link: [https://github.com/szama/RadioStationApp](https://github.com/szama/RadioStationApp)
+
+## Acknowledgements
+
+- [Expo](https://expo.dev/)
+- [React Native](https://reactnative.dev/)
+- [React Navigation](https://reactnavigation.org/)
+- [TypeScript](https://www.typescriptlang.org/)
