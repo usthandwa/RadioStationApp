@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden;
+    }
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+  </style>
+</head>
+<body>
+  <iframe
+    id="ionoFrame"
+    src="https://iframe.iono.fm/s/187?accent=026dab"
+    width="100%"
+    height="100%"
+    loading="lazy"
+    referrerpolicy="no-referrer"
+    frameborder="0"
+  ></iframe>
+  <script>
+    window.addEventListener('message', function(event) {
+      var iframe = document.getElementById('ionoFrame');
+      if (iframe && iframe.contentWindow) {
+        if (event.data === 'play') {
+          var playButton = iframe.contentDocument.querySelector('.play-button');
+          if (playButton) {
+            playButton.click();
+          }
+        } else if (event.data === 'pause') {
+          var pauseButton = iframe.contentDocument.querySelector('.pause-button');
+          if (pauseButton) {
+            pauseButton.click();
+          }
+        }
+      }
+    });
+  </script>
+</body>
+</html>

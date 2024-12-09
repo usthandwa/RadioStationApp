@@ -4,9 +4,34 @@
     "strict": true,
     "paths": {
       "@/*": [
-        "./*"
+        "src/*"
+      ],
+      "@/components/*": [
+        "src/components/*"
+      ],
+      "@/screens/*": [
+        "src/screens/*"
+      ],
+      "@/assets/*": [
+        "src/assets/*"
+      ],
+      "@/services/*": [
+        "src/services/*"
+      ],
+      "@/navigation/*": [
+        "src/navigation/*"
+      ],
+      "@/constants/*": [
+        "src/constants/*"
+      ],
+      "@/utils/*": [
+        "src/utils/*"
+      ],
+      "@/types/*": [
+        "src/types/*"
       ]
-    }
+    },
+    "baseUrl": "."
   },
   "include": [
     "**/*.ts",
