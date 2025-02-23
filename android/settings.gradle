@@ -44,7 +44,7 @@ if (getRNMinorVersion() >= 75) {
   }
 }
 
-rootProject.name = 'RadioStationApp'
+rootProject.name = 'awrsidmedia'
 
 dependencyResolutionManagement {
   versionCatalogs {

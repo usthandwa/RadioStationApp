@@ -6,9 +6,10 @@ import HomeScreen from './src/screens/HomeScreen';
 import LiveStreamScreen from './src/screens/LiveStreamScreen';
 import GiveScreen from './src/screens/GiveScreen';
 import PrayerScreen from './src/screens/PrayerScreen';
-import SocialScreen from './src/screens/SocialScreen';
 import PodcastsScreen from './src/screens/PodcastsScreen';
 import AboutUsScreen from './src/screens/AboutUsScreen';
+import ErrorBoundary from './src/components/ErrorBoundary';
+import AdminPage from './src/services/adminDashboard';
 // import LiveStreamVisualTester from './src/screens/LiveStreamVisualTester';
 
 // In your navigation or main render function:
@@ -30,11 +31,12 @@ const App: React.FC = () => {
         <Stack.Screen name="Podcasts" component={PodcastsScreen} />
         <Stack.Screen name="AboutUs" component={AboutUsScreen} />
         {/* <Stack.Screen name="VisualTester" component={LiveStreamVisualTester} /> */}
-
       </Stack.Navigator>
+      <ErrorBoundary>
+      <AdminPage />
+    </ErrorBoundary>
     </NavigationContainer>
   );
 };
-
-AppRegistry.registerComponent('RadioStationApp', () => App);
+AppRegistry.registerComponent('awrsidmedia', () => App);
 export default App;

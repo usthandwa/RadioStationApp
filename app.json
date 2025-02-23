@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "RadioStationApp",
-    "slug": "RadioStationApp",
+    "name": "awrsidmedia",
+    "slug": "awrsidmedia",
     "version": "1.0.0",
     "scheme": "awrsidmedia",
     "orientation": "portrait",
@@ -23,7 +23,7 @@
           "audio"
         ]
       },
-      "bundleIdentifier": "com.szama.RadioStationAppIOS"
+      "bundleIdentifier": "com.szama.awrsidmediaIOS"
     },
     "android": {
       "permissions": [
@@ -34,7 +34,7 @@
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "package": "com.szama.RadioStationApp"
+      "package": "com.szama.awrsidmedia"
     },
     "web": {
       "favicon": "./assets/favicon.png"
@@ -43,14 +43,15 @@
       "expo-router"
     ],
     "extra": {
+      "apiUrl": "process.env.API_URL",
+      "router": {
+        "origin": false
+      },
       "eas": {
-        "projectId": "5c68cf2b-80c1-4aad-a2e1-1e802d976f22"
+        "projectId": "606a74fb-bd0d-4277-8b90-31acec54833f"
       }
     },
     "owner": "szama",
-    "runtimeVersion": "1.0.0",
-    "updates": {
-      "url": "https://u.expo.dev/5c68cf2b-80c1-4aad-a2e1-1e802d976f22"
-    }
+    "runtimeVersion": "1.0.0"
   }
 }

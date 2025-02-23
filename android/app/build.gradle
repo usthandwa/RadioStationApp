@@ -109,9 +109,9 @@ android {
     buildToolsVersion rootProject.ext.buildToolsVersion
     compileSdk rootProject.ext.compileSdkVersion
 
-    namespace 'com.szama.RadioStationApp'
+    namespace 'com.szama.awrsidmedia'
     defaultConfig {
-        applicationId 'com.szama.RadioStationApp'
+        applicationId 'com.szama.awrsidmedia'
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
