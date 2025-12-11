@@ -1,0 +1,45 @@
+# EAS Build Ignore
+# Files to exclude from build uploads
+
+# Documentation
+*.md
+!README.md
+
+# Logs
+*.log
+logs/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# CMS Server (not needed for mobile build)
+cms-server/node_modules/
+cms-server.log
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Testing
+coverage/
+.nyc_output/
+
+# Temporary files
+tmp/
+temp/
+.tmp/
+
+# Scripts (not needed for build)
+scripts/
+
+# Git
+.git/
+.gitignore
+
+# Large asset sources (keep optimized versions only)
+*.psd
+*.ai
+*.sketch

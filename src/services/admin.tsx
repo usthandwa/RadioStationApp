@@ -1,7 +1,11 @@
 // src/services/admin.ts
 import { Presenter, Show } from '@/src/types/index.ts';
+import Constants from 'expo-constants';
 
-const API_BASE = 'http://localhost:1337/api';
+const API_BASE = (Constants.expoConfig?.extra?.apiUrl as string | undefined) ?? '';
+if (!API_BASE) {
+  console.warn('API_URL not set in app config (app.json > extra.apiUrl)');
+}
 
 export const fetchPresenters = async (): Promise<Record<string, Presenter>> => {
   const response = await fetch(`${API_BASE}/presenters`);

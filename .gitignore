@@ -1,16 +1,24 @@
-node_modules/
-.expo/
-dist/
-npm-debug.*
-*.jks
-*.p8
-*.p12
-*.key
-*.mobileprovision
-*.orig.*
-web-build/
+# Yarn
+yarn-error.log
+.yarn/
 
 # macOS
 .DS_Store
-/android
-/ios
+.AppleDouble
+.LSOverride
+
+# Expo
+.expo/
+dist/
+
+# Dependencies
+node_modules/
+
+# Build outputs
+ios/build/
+android/build/
+android/app/build/
+
+# IDE
+.vscode/
+.idea/

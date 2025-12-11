@@ -80,7 +80,7 @@ export const api = {
     return response.data;
   },
 
-  upload: async <T>(url: string, formData: FormData, config = {}) => {
+  upload: async <T>(url: string, formData: FormData, config: import('axios').AxiosRequestConfig = {}) => {
     const uploadConfig = {
       ...config,
       headers: {
@@ -94,3 +94,6 @@ export const api = {
 };
 
 export default api;
+// NOTE: Environment-specific shell exports were accidentally committed here.
+// They have been removed. Use your shell profile (e.g., ~/.zshrc) or CI config
+// to export ANDROID_HOME and related PATH entries.

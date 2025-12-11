@@ -15,11 +15,11 @@
     "assetBundlePatterns": [
       "**/*"
     ],
+    "platforms": ["ios", "android", "web"],
     "ios": {
       "supportsTablet": true,
       "infoPlist": {
         "UIBackgroundModes": [
-          "audio",
           "audio"
         ]
       },
@@ -27,7 +27,6 @@
     },
     "android": {
       "permissions": [
-        "AUDIO_RECORDING",
         "AUDIO_RECORDING"
       ],
       "adaptiveIcon": {
@@ -43,7 +42,7 @@
       "expo-router"
     ],
     "extra": {
-      "apiUrl": "process.env.API_URL",
+      "apiUrl": "http://192.168.0.188:3001/api",
       "router": {
         "origin": false
       },

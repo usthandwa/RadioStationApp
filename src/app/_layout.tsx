@@ -1,21 +1,24 @@
 import React, { useEffect, useCallback } from 'react';
-import { View, StyleSheet, Text } from 'react-native';
-import { Stack, useRouter } from 'expo-router';
-import { Audio } from 'expo-av';
+import { View, StyleSheet, Text, Platform, TouchableOpacity } from 'react-native';
+import { Stack, useRouter, usePathname } from 'expo-router';
+import { Audio, InterruptionModeIOS, InterruptionModeAndroid } from 'expo-av';
 import { Linking } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
+import Icon from '@expo/vector-icons/FontAwesome5';
+import * as Haptics from 'expo-haptics';
 import AppNavigation from '@/src/components/AppNavigation';
-import { HeaderBackButton } from '@react-navigation/elements';
 
 export default function Layout() {
   const router = useRouter();
+  const pathname = usePathname();
 
   const handleDeepLink = useCallback((url: string) => {
     try {
       const path = url.replace(/.*?:\/\//g, '').toLowerCase();
       const validRoutes = ['live-stream', 'give', 'prayer', 'podcasts', 'about-us'];
-      
+
       if (validRoutes.includes(path)) {
-        router.push(path);
+        router.push(path as any);
       } else {
         router.push('/');
       }
@@ -34,8 +37,8 @@ export default function Layout() {
         await Audio.setAudioModeAsync({
           playsInSilentModeIOS: true,
           staysActiveInBackground: true,
-          interruptionModeIOS: 2, // Instead of Audio.INTERRUPTION_MODE_IOS_DUCK_OTHERS
-interruptionModeAndroid: 2, // Instead of Audio.INTERRUPTION_MODE_ANDROID_DUCK_OTHERS
+          interruptionModeIOS: InterruptionModeIOS.DuckOthers,
+          interruptionModeAndroid: InterruptionModeAndroid.DuckOthers,
           shouldDuckAndroid: true,
           playThroughEarpieceAndroid: false
         });
@@ -60,58 +63,181 @@ interruptionModeAndroid: 2, // Instead of Audio.INTERRUPTION_MODE_ANDROID_DUCK_O
       Audio.setAudioModeAsync({
         playsInSilentModeIOS: false,
         staysActiveInBackground: false,
-        interruptionModeIOS: 1, // Instead of Audio.INTERRUPTION_MODE_IOS_DUCK_OTHERS
-        interruptionModeAndroid: 1, // Instead of Audio.INTERRUPTION_MODE_ANDROID_DUCK_OTHERS
+        interruptionModeIOS: InterruptionModeIOS.DoNotMix,
+        interruptionModeAndroid: InterruptionModeAndroid.DoNotMix,
         shouldDuckAndroid: false,
         playThroughEarpieceAndroid: false
       }).catch(console.error);
     };
   }, [handleDeepLink]);
 
+  const handleBackPress = useCallback(() => {
+    if (Platform.OS === 'ios') {
+      Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
+    }
+    // Always navigate to home instead of going back in history
+    router.push('/');
+  }, [router]);
+
   return (
     <>
       <Stack
         screenOptions={{
           headerShown: true,
+          animation: 'slide_from_right',
+          presentation: 'card',
+          gestureEnabled: true,
+          gestureDirection: 'horizontal',
           header: ({ options, back }) => (
-            <View style={styles.header}>
-              {back && (
-                <HeaderBackButton
-                  onPress={() => router.back()}
-                  tintColor="#07477B"
-                  labelVisible={false}
-                />
-              )}
-              <Text style={styles.headerTitle}>{options.title}</Text>
-            </View>
+            <SafeAreaView edges={['top']} style={styles.headerSafeArea}>
+              <View style={styles.header}>
+                <View style={styles.headerContent}>
+                  {back && (
+                    <TouchableOpacity
+                      onPress={handleBackPress}
+                      style={styles.backButton}
+                      activeOpacity={0.7}
+                    >
+                      <Icon name="home" size={20} color="#07477B" />
+                      <Text style={styles.backText}>Home</Text>
+                    </TouchableOpacity>
+                  )}
+                  <Text style={[styles.headerTitle, !back && styles.headerTitleCentered]}>
+                    {options.title}
+                  </Text>
+                  <TouchableOpacity
+                    onPress={() => {
+                      if (Platform.OS === 'ios') {
+                        Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
+                      }
+                      router.push('/menu');
+                    }}
+                    style={styles.menuButton}
+                    activeOpacity={0.7}
+                  >
+                    <Icon name="bars" size={20} color="#07477B" />
+                  </TouchableOpacity>
+                </View>
+              </View>
+            </SafeAreaView>
           ),
         }}
       >
-        <Stack.Screen name="index" options={{ headerShown: false }} />
-        <Stack.Screen name="live-stream" options={{ title: "Live Stream" }} />
-        <Stack.Screen name="give" options={{ title: "Give" }} />
-        <Stack.Screen name="prayer" options={{ title: "Prayer" }} />
-        <Stack.Screen name="podcasts" options={{ title: "Podcasts" }} />
-        <Stack.Screen name="about-us" options={{ title: "About Us" }} />
+        <Stack.Screen
+          name="index"
+          options={{
+            headerShown: false,
+            animation: 'fade'
+          }}
+        />
+        <Stack.Screen
+          name="live-stream"
+          options={{
+            title: "Live Stream",
+            animation: 'slide_from_right'
+          }}
+        />
+        <Stack.Screen
+          name="give"
+          options={{
+            title: "Give",
+            animation: 'slide_from_right'
+          }}
+        />
+        <Stack.Screen
+          name="prayer"
+          options={{
+            title: "Prayer",
+            animation: 'slide_from_right'
+          }}
+        />
+        <Stack.Screen
+          name="podcasts"
+          options={{
+            title: "Podcasts",
+            animation: 'slide_from_right'
+          }}
+        />
+        <Stack.Screen
+          name="about-us"
+          options={{
+            title: "About Us",
+            animation: 'slide_from_right'
+          }}
+        />
+        <Stack.Screen
+          name="menu"
+          options={{
+            headerShown: false,
+            animation: 'slide_from_right'
+          }}
+        />
       </Stack>
-      <AppNavigation />
+      {pathname && <AppNavigation />}
     </>
   );
 }
 
 const styles = StyleSheet.create({
+  headerSafeArea: {
+    backgroundColor: '#fff',
+  },
   header: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'center',
-    height: 60,
     backgroundColor: '#fff',
     borderBottomWidth: 1,
     borderBottomColor: '#e0e0e0',
+    ...Platform.select({
+      ios: {
+        shadowColor: '#000',
+        shadowOffset: { width: 0, height: 2 },
+        shadowOpacity: 0.1,
+        shadowRadius: 3,
+      },
+      android: {
+        elevation: 4,
+      },
+    }),
+  },
+  headerContent: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    height: 56,
+    paddingHorizontal: 16,
+  },
+  backButton: {
+    position: 'absolute',
+    left: 12,
+    zIndex: 1,
+    flexDirection: 'row',
+    alignItems: 'center',
+    paddingVertical: 8,
+    paddingHorizontal: 12,
+    backgroundColor: '#f5f5f5',
+    borderRadius: 20,
+    gap: 6,
+  },
+  backText: {
+    color: '#07477B',
+    fontSize: 15,
+    fontWeight: '600',
+    marginLeft: 4,
+  },
+  menuButton: {
+    position: 'absolute',
+    right: 12,
+    zIndex: 1,
+    padding: 10,
+    backgroundColor: '#f5f5f5',
+    borderRadius: 20,
   },
   headerTitle: {
     fontSize: 18,
-    fontWeight: 'bold',
+    fontWeight: '600',
     color: '#07477B',
+    letterSpacing: 0.3,
+  },
+  headerTitleCentered: {
+    textAlign: 'center',
   },
 });
