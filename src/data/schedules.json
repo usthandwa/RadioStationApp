@@ -1,0 +1,46 @@
+[
+  {
+    "id": "schedule-weekday",
+    "type": "weekday",
+    "showIds": [
+      "show-001",
+      "show-002",
+      "show-003",
+      "show-004",
+      "show-005",
+      "show-006"
+    ],
+    "isActive": true,
+    "createdAt": "2024-01-01T00:00:00.000Z",
+    "updatedAt": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "id": "schedule-friday",
+    "type": "friday",
+    "showIds": [
+      "show-001",
+      "show-002",
+      "show-003",
+      "show-004",
+      "show-005",
+      "show-007"
+    ],
+    "isActive": true,
+    "createdAt": "2024-01-01T00:00:00.000Z",
+    "updatedAt": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "id": "schedule-weekend",
+    "type": "weekend",
+    "showIds": [
+      "show-008",
+      "show-009",
+      "show-010",
+      "show-011",
+      "show-012"
+    ],
+    "isActive": true,
+    "createdAt": "2024-01-01T00:00:00.000Z",
+    "updatedAt": "2024-01-01T00:00:00.000Z"
+  }
+]

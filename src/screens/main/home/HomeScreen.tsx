@@ -190,6 +190,14 @@ export default function HomeScreen() {
               <Text style={styles.aboutUsText}>About Us</Text>
             </TouchableOpacity>
           </Link>
+
+          <TouchableOpacity
+            style={styles.cmsButton}
+            onPress={() => (router as any).push('/CMSDashboard')}
+          >
+            <Icon name="cog" size={20} color="#fff" />
+            <Text style={styles.cmsButtonText}>CMS Admin</Text>
+          </TouchableOpacity>
         </ScrollView>
       </View>
     </SafeAreaView>
@@ -280,6 +288,21 @@ const styles = StyleSheet.create({
         color: '#fff',
         fontSize: 16,
         fontWeight: 'bold',
+    },
+    cmsButton: {
+        backgroundColor: '#4CAF50',
+        padding: 15,
+        borderRadius: 10,
+        alignItems: 'center',
+        flexDirection: 'row',
+        justifyContent: 'center',
+        marginTop: 10,
+    },
+    cmsButtonText: {
+        color: '#fff',
+        fontSize: 16,
+        fontWeight: 'bold',
+        marginLeft: 10,
     },
     socialContainer: {
       // flex: 1,

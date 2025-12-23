@@ -1,0 +1,102 @@
+[
+  {
+    "id": "presenter-001",
+    "name": "Thamsanqa Tshuma",
+    "bio": "Thamsanqa Tshuma believes that at the heart of life are relationships—everything else is secondary. As the host of Valley of Praise (airing weekdays from 3:00 AM to 6:00 AM), he explores the importance of personal, spiritual, and professional connections every day. His mission is to inspire listeners to view each day not just as a pursuit of success but as a chance to love others as themselves. For Thamsanqa, each day is a divine opportunity to serve God through how we relate to those around us.",
+    "imagePath": "@/assets/AWRPresenters/Thamsanqa Tshuma.png",
+    "socials": {},
+    "isArchived": false,
+    "createdAt": "2024-01-01T00:00:00.000Z",
+    "updatedAt": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "id": "presenter-002",
+    "name": "Dereck Viriri",
+    "bio": "Dereck Viriri is a devoted Christian radio enthusiast, passionate about sharing biblical principles with everyone, particularly the youth. His dedication to promoting personal growth stems from his belief in preparing individuals for heaven. Outside of his professional life, Dereck is a loving husband who places great importance on family and community. His favorite scripture, Psalms 119:130 (ERV), resonates deeply with him: \"As people understand your word, it brings light to their lives. Your word makes even simple people wise.\".",
+    "imagePath": "@/assets/AWRPresenters/Dereck Viriri.png",
+    "socials": {},
+    "isArchived": false,
+    "createdAt": "2024-01-01T00:00:00.000Z",
+    "updatedAt": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "id": "presenter-003",
+    "name": "Zanele Zama",
+    "bio": "Zanele Zama is a seasoned media practitioner with over 13 years of experience in reporting, producing, show presenting, and digital marketing. As a mother of three and a devoted wife, she enjoys cooking and watching drama series in her downtime. Her go-to scripture during life's ups and downs is 1 Corinthians 2:9: \"No eye has seen, no ear has heard, and no human mind has conceived the things God has prepared for those who love him.\" This verse grounds her both professionally and personally.",
+    "imagePath": "@/assets/AWRPresenters/Zanele Zama.png",
+    "socials": {},
+    "isArchived": false,
+    "createdAt": "2024-01-01T00:00:00.000Z",
+    "updatedAt": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "id": "presenter-004",
+    "name": "Naye Lupondwana",
+    "bio": "Bio for Naye Lupondwana",
+    "imagePath": "@/assets/AWRPresenters/Naye Lupondwana.png",
+    "socials": {},
+    "isArchived": false,
+    "createdAt": "2024-01-01T00:00:00.000Z",
+    "updatedAt": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "id": "presenter-005",
+    "name": "Zama Malote",
+    "bio": "Zama Malote has a deep passion for debates, documentaries, and reading, particularly religious and political material. One of his favorite scriptures is Psalm 37:25, which says, \"I was young and now I am old, yet I have never seen the righteous forsaken or their children begging for bread.\" This verse resonates deeply with his faith and perspective on life. His love for knowledge and meaningful conversation reflects his commitment to personal and spiritual growth..",
+    "imagePath": "@/assets/AWRPresenters/Zama Malote.png",
+    "socials": {},
+    "isArchived": false,
+    "createdAt": "2024-01-01T00:00:00.000Z",
+    "updatedAt": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "id": "presenter-006",
+    "name": "Thapelo Moloi",
+    "bio": "Thapelo Moloi is a passionate Christian and avid reader, known for his talents in radio and public speaking. He is deeply committed to holistic people development, using platforms like radio, TV, and public speaking to inspire and uplift others. His areas of interest include Christianity, business, investments, finance, and economics. Thapelo's favorite scripture is Matthew 25:23, which reads, \"Well done, good and faithful servant. You have been faithful over a little; I will set you over much. Enter into the joy of your master.\"",
+    "imagePath": "@/assets/AWRPresenters/Thapelo Moloi.png",
+    "socials": {},
+    "isArchived": false,
+    "createdAt": "2024-01-01T00:00:00.000Z",
+    "updatedAt": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "id": "presenter-007",
+    "name": "Millicent Ndiweni",
+    "bio": "Millicent Ndiweni is a Talk Radio Producer and Presenter at Adventist World Radio, passionate about education, authenticity, and affirming others positively. Though still young and evolving in her views, she prays to reflect the kindness and grace of Jesus in all her interactions. With a wide range of interests, she brings skills in speaking, critical thinking, research, teaching, writing, and vegetarian cooking, all wrapped in her warm and smiley personality. If you're looking for a dynamic speaker or creative thinker, Millicent is the one to consider.",
+    "imagePath": "@/assets/AWRPresenters/Millicent Ndiweni.png",
+    "socials": {},
+    "isArchived": false,
+    "createdAt": "2024-01-01T00:00:00.000Z",
+    "updatedAt": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "id": "presenter-008",
+    "name": "Sibongile Lugube",
+    "bio": "Sibongile Lugube's joy is to worship God and to usher the listener into an awareness of His omnipresence, particularly in the midst of the unspectacular, humdrum, regular, everyday activities of life. Psalm 27:4 \"One thing I ask from the Lord, this only do I seek: that I may dwell in the house of the Lord all the days of my life, to gaze on the beauty of the Lord.\"",
+    "imagePath": "@/assets/AWRPresenters/Sibongile Lugube.png",
+    "socials": {},
+    "isArchived": false,
+    "createdAt": "2024-01-01T00:00:00.000Z",
+    "updatedAt": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "id": "presenter-009",
+    "name": "Mwayi Chapambali",
+    "bio": "Mwayi Chapambali is driven by faith and purpose, he dedicates himself to serving the Lord while helping others find their path to salvation. As a compassionate listener, he value diverse perspectives and work to foster unity and connection within our community. His guiding light is John 3:16 - \"For God so loved the world that he gave his one and only Son, that whoever believes in him shall not perish but have eternal life.\" This sacred verse serves both as a warning about the world's challenges and an inspiring promise that through faith in God, we can find redemption.",
+    "imagePath": "@/assets/AWRPresenters/Mwayi Champabali.png",
+    "socials": {},
+    "isArchived": false,
+    "createdAt": "2024-01-01T00:00:00.000Z",
+    "updatedAt": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "id": "presenter-010",
+    "name": "Malvern Makichi",
+    "bio": "Malvern Makichi enjoys connecting with listeners and sharing practical life tips and information on his shows. He has a keen interest in news and current affairs, complemented by his smooth voice, perfect for radio and news broadcasting. His favorite Bible verse is Matthew 5:8: \"Blessed are the pure in heart, for they shall see God.\" This scripture reflects his values and guides his approach to life and his work in radio.",
+    "imagePath": "@/assets/AWRPresenters/Malvern Makichi.png",
+    "socials": {},
+    "isArchived": false,
+    "createdAt": "2024-01-01T00:00:00.000Z",
+    "updatedAt": "2024-01-01T00:00:00.000Z"
+  }
+]

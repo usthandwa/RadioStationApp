@@ -1,0 +1,110 @@
+[
+  {
+    "id": "show-001",
+    "name": "Valley of Praise",
+    "time": "03:00 - 06:00",
+    "presenterId": "presenter-001",
+    "synopsis": "Valley of Praise is a spiritual platform designed to inspire your day with fresh perspectives on life and faith. It offers a unique approach to daily devotionals, helping you discover God's presence in unexpected places throughout your routine. Through music, reflections, and interactive challenges, it transforms everyday moments into opportunities for worship and praise. Join Valley of Praise to turn ordinary mornings into extraordinary spiritual experiences.",
+    "createdAt": "2024-01-01T00:00:00.000Z",
+    "updatedAt": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "id": "show-002",
+    "name": "Glorious Morning",
+    "time": "06:00 - 09:00",
+    "presenterId": "presenter-002",
+    "synopsis": "Glorious Morning is a Christian breakfast show that energizes your day with faith-filled content. It features engaging conversations, uplifting music, and insightful Bible study. The show aims to transform your morning routine into a spiritually enriching experience. Glorious Morning equips listeners with inspiration and wisdom to navigate their day with grace and purpose.",
+    "createdAt": "2024-01-01T00:00:00.000Z",
+    "updatedAt": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "id": "show-003",
+    "name": "Mid-Morning Empowerment",
+    "time": "09:00 - 12:00",
+    "presenterId": "presenter-003",
+    "synopsis": "Mid-Morning Empowerment is your daily source for spiritual growth and practical Christian living. This brunchtime show delivers an engaging mix of in-depth Bible study, empowering devotions, and thoughtful discussions that tackle challenging scriptural concepts. With live music requests and a dedicated parenting segment, Mid-Morning Empowerment equips listeners to navigate their faith journey and raise godly children in todays complex world.",
+    "createdAt": "2024-01-01T00:00:00.000Z",
+    "updatedAt": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "id": "show-004",
+    "name": "LIVE",
+    "time": "12:00 - 15:00",
+    "presenterId": "presenter-004",
+    "synopsis": "LIVE is a dynamic lunchtime show serving as a spiritual companion through your day, offering nourishment for body and soul. It covers every aspect of the Christian journey, from daily devotions to life's biggest challenges. The show features prayer, music, interactive discussions, and spiritual guidance. LIVE aims to create a vibrant community of faith in action, accompanying listeners from their first tune-in through baptism and beyond.",
+    "createdAt": "2024-01-01T00:00:00.000Z",
+    "updatedAt": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "id": "show-005",
+    "name": "Maranatha Drive",
+    "time": "15:00 - 18:00",
+    "presenterId": "presenter-005",
+    "synopsis": "Maranatha Drive is an energetic afternoon commute show that blends contemporary Christian music with discussions on current affairs and biblical insights. It aims to keep listeners informed, inspired, and connected to their faith as they end their workday. The show offers a mix of uplifting tunes, thought-provoking commentary, and spiritual reflection. Maranatha Drive ensures listeners journeys home are both entertaining and spiritually enriching.",
+    "createdAt": "2024-01-01T00:00:00.000Z",
+    "updatedAt": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "id": "show-006",
+    "name": "Business Sense",
+    "time": "18:00 - 20:00",
+    "presenterId": "presenter-006",
+    "synopsis": "Business Sense is a Christian money show that aims to transform believers into financial achievers. It aligns financial practices with faith, breaking down complex financial concepts into actionable plans for the SID region. The show covers personal finance, entrepreneurship, and global technological trends, all underpinned by principles of faithful stewardship. Business Sense serves as a guide to financial freedom for listeners at all stages, from those in debt to aspiring entrepreneurs.",
+    "createdAt": "2024-01-01T00:00:00.000Z",
+    "updatedAt": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "id": "show-007",
+    "name": "Bible/Kids Perspective",
+    "time": "18:00 - 20:00",
+    "presenterId": "dynamic",
+    "synopsis": "Bible Perspective and Kids Perspective are shows that explore how biblical wisdom applies to modern living for both adults and children. Bible Perspective examines Scripture and biblical figures to provide practical guidance for todays challenges, while Kids Perspective offers a dynamic platform for young minds to ask tough questions about faith. Both shows aim to make biblical teachings accessible and relevant, with Bible Perspective focusing on adult issues and Kids Perspective catering to curious children aged 5 to 16. These programs demonstrate that faith, curiosity, and practical application of biblical principles can go hand in hand for all ages.",
+    "createdAt": "2024-01-01T00:00:00.000Z",
+    "updatedAt": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "id": "show-008",
+    "name": "Glorious Morning Weekend",
+    "time": "06:00 - 09:00",
+    "presenterId": "presenter-007",
+    "synopsis": "Glorious Morning Weekend: Your spiritual power breakfast, serving up hearty portions of biblical wisdom for modern life! We're dishing out a feast of foundational doctrines, from prophetic insights to holistic health, all seasoned with practical advice for todays Christian. Hungry for financial freedom? Craving guidance on navigating women's issues? Seeking the recipe for inclusivity in a world of self-centeredness? We've got you covered! Join us as we brew a robust blend of timeless truths and contemporary challenges, helping you rise and shine with Gods glory in an ever-changing world. At Glorious Morning Weekend, we're not just starting your day—we are jumpstarting your faith!",
+    "createdAt": "2024-01-01T00:00:00.000Z",
+    "updatedAt": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "id": "show-009",
+    "name": "MME Weekend",
+    "time": "09:00 - 12:00",
+    "presenterId": "presenter-008",
+    "synopsis": "Mid-Morning Empowerment Weekend Edition is a Christ-centered show that explores extraordinary, overlooked, and fascinating topics through a blend of rigorous inquiry and playful exploration. It covers a wide range of subjects including quirky science, obscure history, pop culture phenomena, and hidden spiritual insights. The show aims to empower listeners' minds, entertain, and ignite faith by presenting God's diverse and wonder-filled world in an engaging way. It transforms weekends into a celebration of learning and curiosity, proving that exploring Gods creation can be both enlightening and fun.",
+    "createdAt": "2024-01-01T00:00:00.000Z",
+    "updatedAt": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "id": "show-010",
+    "name": "Lunchtime Spirituals",
+    "time": "12:00 - 14:00",
+    "presenterId": "presenter-009",
+    "synopsis": "Lunch Time Spirituals is a weekend midday show offering a blend of uplifting music and spiritual insights to accompany your meal. It features a mix of contemporary Christian hits and timeless hymns, alongside bite-sized Bible studies and verse-by-verse explorations. The program aims to transform your weekend lunch break into a soul-satisfying experience. Lunch Time Spirituals strives to nourish both body and spirit, providing food for thought alongside your physical meal.",
+    "createdAt": "2024-01-01T00:00:00.000Z",
+    "updatedAt": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "id": "show-011",
+    "name": "Sinai",
+    "time": "14:00 - 17:00",
+    "presenterId": "presenter-004",
+    "synopsis": "SINAI is a bold religious show that tackles tough questions and challenges in faith with fearless inquiry. It explores uncomfortable topics, taboos, and challenges to the status quo in pursuit of divine truth amidst human interpretations. The program features discussions with modern-day leaders and thinkers who dare to confront difficult spiritual and philosophical issues. SINAI aims to elevate religious conversation by encouraging a journey of determined spiritual exploration, regardless of how long or challenging it may be.",
+    "createdAt": "2024-01-01T00:00:00.000Z",
+    "updatedAt": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "id": "show-012",
+    "name": "The Weekend Chapter",
+    "time": "17:00 - 20:00",
+    "presenterId": "presenter-010",
+    "synopsis": "The Weekend Chapter serves as a spiritual recharge station as the week concludes. Saturdays feature inspiring interviews, music group spotlights, and listener-requested tunes for relaxation. Sundays offer soul-stirring sermons, life lessons, and practical tips for the week ahead, accompanied by an uplifting playlist. The show aims to bookend your weekend with a mix of relaxation and revelation, helping you close the week's chapter and prepare for the next.",
+    "createdAt": "2024-01-01T00:00:00.000Z",
+    "updatedAt": "2024-01-01T00:00:00.000Z"
+  }
+]

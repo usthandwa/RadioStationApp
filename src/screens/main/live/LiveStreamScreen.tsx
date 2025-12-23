@@ -1,22 +1,10 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { View, Text, StyleSheet, ScrollView, Dimensions, TouchableOpacity, Image, Animated, Easing, Modal, Platform, Linking } from 'react-native';
+import { View, Text, StyleSheet, ScrollView, Dimensions, TouchableOpacity, Image, Animated, Easing, Modal, Platform, Linking, ActivityIndicator } from 'react-native';
 import { WebView } from 'react-native-webview';
 import Icon from '@expo/vector-icons/FontAwesome';
+import { loadPresenters, loadShows, Show, Presenter } from '@/services/data/LiveStreamDataLoader';
 
 const { width } = Dimensions.get('window');
-
-interface Show {
-  name: string;
-  time: string;
-  presenter: string | (() => string);
-  synopsis: string;
-}
-
-interface Presenter {
-  name: string;
-  bio: string;
-  image: any;
-}
 
 const LiveStreamScreen: React.FC = () => {
   const [currentShow, setCurrentShow] = useState<Show | null>(null);
@@ -26,12 +14,34 @@ const LiveStreamScreen: React.FC = () => {
   const [selectedPresenter, setSelectedPresenter] = useState<Presenter | null>(null);
   const [modalVisible, setModalVisible] = useState(false);
   const [upcomingShows, setUpcomingShows] = useState<Show[]>([]);
-  
-  
+  const [dataLoaded, setDataLoaded] = useState(false);
+
+  // Dynamic data from CMS
+  const [presenters, setPresenters] = useState<{ [key: string]: Presenter }>({});
+  const [shows, setShows] = useState<{ [key: string]: Show[] }>({ weekday: [], friday: [], weekend: [] });
+
   const rotateAnim = useRef(new Animated.Value(0)).current;
   const scaleAnim = useRef(new Animated.Value(1)).current;
 
-  const presenters: { [key: string]: Presenter } = {
+  // Load CMS data on mount
+  useEffect(() => {
+    const loadCMSData = async () => {
+      try {
+        const loadedPresenters = await loadPresenters();
+        setPresenters(loadedPresenters);
+        const loadedShows = await loadShows(loadedPresenters);
+        setShows(loadedShows);
+        setDataLoaded(true);
+      } catch (error) {
+        console.error('Error loading CMS data:', error);
+        setDataLoaded(true); // Still set to true to prevent infinite loading
+      }
+    };
+    loadCMSData();
+  }, []);
+
+  // Original hardcoded presenters as fallback (keeping structure for reference)
+  const fallbackPresenters: { [key: string]: Presenter } = {
     'Thamsanqa Tshuma': { 
       name: 'Thamsanqa Tshuma', 
       bio: 'Thamsanqa Tshuma believes that at the heart of life are relationships—everything else is secondary. As the host of Valley of Praise (airing weekdays from 3:00 AM to 6:00 AM), he explores the importance of personal, spiritual, and professional connections every day. His mission is to inspire listeners to view each day not just as a pursuit of success but as a chance to love others as themselves. For Thamsanqa, each day is a divine opportunity to serve God through how we relate to those around us.', 
@@ -85,19 +95,12 @@ const LiveStreamScreen: React.FC = () => {
   };
 
 
-  const getBibleKidsPerspectivePresenter = () => {
-    const now = new Date();
-    const isKidsPerspective = now.getDate() >= 8 && now.getDate() <= 14; // 2nd week of the month
-    const weekNumber = Math.floor((now.getDate() - 1) / 7) + 1;
-    
-    if (isKidsPerspective) {
-      return 'Zanele Zama';
-    } else {
-      return weekNumber % 2 === 1 ? 'Zanele Zama' : 'Dereck Viriri';
-    }
-  };
+  // getBibleKidsPerspectivePresenter moved to LiveStreamDataLoader.ts
+  // shows object is now loaded dynamically from CMS
 
-  const shows: { [key: string]: Show[] } = {
+  // Fallback shows definition (commented out - now loaded from CMS)
+  /*
+  const staticShows: { [key: string]: Show[] } = {
     weekday: [
       { name: 'Valley of Praise', time: '03:00 - 06:00', presenter: 'Thamsanqa Tshuma', synopsis: 'Valley of Praise is a spiritual platform designed to inspire your day with fresh perspectives on life and faith. It offers a unique approach to daily devotionals, helping you discover God\'s presence in unexpected places throughout your routine. Through music, reflections, and interactive challenges, it transforms everyday moments into opportunities for worship and praise. Join Valley of Praise to turn ordinary mornings into extraordinary spiritual experiences.' },
       { name: 'Glorious Morning', time: '06:00 - 09:00', presenter: 'Dereck Viriri', synopsis: 'Glorious Morning is a Christian breakfast show that energizes your day with faith-filled content. It features engaging conversations, uplifting music, and insightful Bible study. The show aims to transform your morning routine into a spiritually enriching experience. Glorious Morning equips listeners with inspiration and wisdom to navigate their day with grace and purpose.' },
@@ -122,6 +125,7 @@ const LiveStreamScreen: React.FC = () => {
       { name: 'The Weekend Chapter', time: '17:00 - 20:00', presenter: 'Malvern Makichi', synopsis: 'The Weekend Chapter serves as a spiritual recharge station as the week concludes. Saturdays feature inspiring interviews, music group spotlights, and listener-requested tunes for relaxation. Sundays offer soul-stirring sermons, life lessons, and practical tips for the week ahead, accompanied by an uplifting playlist. The show aims to bookend your weekend with a mix of relaxation and revelation, helping you close the week\'s chapter and prepare for the next.' },
     ],
   };
+  */
 
   const iframeHtml = `
   <html>
@@ -139,11 +143,13 @@ const LiveStreamScreen: React.FC = () => {
 `;
 
 useEffect(() => {
+  if (!dataLoaded || Object.keys(presenters).length === 0) return;
+
   const determineCurrentShow = () => {
     const now = new Date();
     const day = now.getDay();
     const hour = now.getHours();
-    let schedule;
+    let schedule: Show[];
 
     if (day === 5) { // Friday
       schedule = shows.friday;
@@ -152,7 +158,7 @@ useEffect(() => {
     } else { // Saturday and Sunday
       schedule = shows.weekend;
     }
-    
+
     let currentShowIndex = -1;
     for (let i = 0; i < schedule.length; i++) {
       const show = schedule[i];
@@ -166,7 +172,7 @@ useEffect(() => {
         break;
       }
     }
-    
+
     if (currentShowIndex === -1) {
       setCurrentShow(null);
       setCurrentPresenter(null);
@@ -180,7 +186,7 @@ useEffect(() => {
   determineCurrentShow();
   const interval = setInterval(determineCurrentShow, 60000);
   return () => clearInterval(interval);
-}, []);
+}, [dataLoaded, presenters, shows]);
 
 
 interface VinylRecordEffectProps {
@@ -389,6 +395,15 @@ const VinylRecordEffect: React.FC<VinylRecordEffectProps> = ({ isPlaying, childr
     </View>
   );
 
+  if (!dataLoaded) {
+    return (
+      <View style={[styles.container, styles.loadingContainer]}>
+        <ActivityIndicator size="large" color="#07477B" />
+        <Text style={styles.loadingText}>Loading CMS data...</Text>
+      </View>
+    );
+  }
+
   return (
     <ScrollView style={styles.container}>
       <Text style={styles.title}>Live Stream</Text>
@@ -475,6 +490,15 @@ const styles = StyleSheet.create({
     flex: 1,
     padding: 20,
     backgroundColor: '#c0cacb',
+  },
+  loadingContainer: {
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  loadingText: {
+    marginTop: 10,
+    fontSize: 16,
+    color: '#07477B',
   },
   title: {
     fontSize: 24,
