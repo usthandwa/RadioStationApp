@@ -3,7 +3,7 @@ import { View, Text, StyleSheet, TouchableOpacity, ScrollView, Image, SafeAreaVi
 import { useRouter, Link } from 'expo-router';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import SocialScreen from '../social/SocialScreen';
-import { usePlaybackState } from '@/services/player/trackPlayerservices';
+import { usePlaybackState, setupPlayer, togglePlayback } from '@/services/player/trackPlayerservices';
 
 
 
@@ -257,7 +257,7 @@ const styles = StyleSheet.create({
     position: 'absolute',
     bottom: 20,
     right: 30,
-    backgroundColor: 'none',//'#07477B',
+    backgroundColor: 'transparent',
     width: 60,  // Increased size
     height: 60, // Increased size
     borderRadius: 30, // Adjusted for new size
@@ -289,12 +289,3 @@ const styles = StyleSheet.create({
       paddingVertical: 0,
     },
 });
-
-function togglePlayback() {
-  throw new Error('Function not implemented.');
-}
-
-
-function setupPlayer() {
-  throw new Error('Function not implemented.');
-}

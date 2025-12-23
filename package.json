@@ -35,7 +35,9 @@
     "react-native-screens": "3.31.1",
     "react-native-web": "~0.19.10",
     "expo-av": "~14.0.7",
-    "undefined": "react-native-vector-icons/FontAwesome"
+    "react-native-vector-icons": "^10.0.0",
+    "@react-navigation/stack": "^6.3.20",
+    "react-native-webview": "^13.6.3"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",

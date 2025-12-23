@@ -72,10 +72,10 @@ const LiveStreamScreen: React.FC = () => {
       bio: 'Sibongile Lugube’s joy is to worship God and to usher the listener into an awareness of His omnipresence, particularly in the midst of the unspectacular, humdrum, regular, everyday activities of life. Psalm 27:4 “One thing I ask from the Lord, this only do I seek: that I may dwell in the house of the Lord all the days of my life, to gaze on the beauty of the Lord.“',
       image: require('@/assets/AWRPresenters/Sibongile Lugube.png') 
     },
-    'Mwayi Chapambali': { 
-      name: 'Mwayi Chapambali', 
-      bio: 'Mwayi Chapambali is driven by faith and purpose, he dedicates himself to serving the Lord while helping others find their path to salvation. As a compassionate listener, he value diverse perspectives and work to foster unity and connection within our community. His guiding light is John 3:16 - “For God so loved the world that he gave his one and only Son, that whoever believes in him shall not perish but have eternal life.” This sacred verse serves both as a warning about the world’s challenges and an inspiring promise that through faith in God, we can find redemption.', 
-      image: require('@/assets/AWRPresenters/Mwayi Champabali.png') 
+    'Mwayi Champabali': {
+      name: 'Mwayi Champabali',
+      bio: 'Mwayi Champabali is driven by faith and purpose, he dedicates himself to serving the Lord while helping others find their path to salvation. As a compassionate listener, he value diverse perspectives and work to foster unity and connection within our community. His guiding light is John 3:16 - "For God so loved the world that he gave his one and only Son, that whoever believes in him shall not perish but have eternal life." This sacred verse serves both as a warning about the world's challenges and an inspiring promise that through faith in God, we can find redemption.',
+      image: require('@/assets/AWRPresenters/Mwayi Champabali.png')
     },
     'Malvern Makichi': { 
       name: 'Malvern Makichi', 
